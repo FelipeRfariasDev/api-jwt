@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "3e7b85c9-0c64-4dab-a865-d3dec8400e31",
+		"name": "api-jwt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21923797"
+	},
+	"item": [
+		{
+			"name": "Bearer Token",
+			"item": [
+				{
+					"name": "adicionar curso",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Lumen Micro Framework - Guia (Incl. Eloquent, MySQL e JWT)\",\r\n    \"descricao\":\"Lumen é fantástico para fazer REST APIs. Aprenda neste curso os fundamentos e a Utilizá-lo com Eloquent, Mysql e JWT.\",\r\n    \"requisitos\": \" - Fundamentos de PHP são absolutamente necessários.<br> - Não precisa ser um especialista em PHP para fazer este curso.<br> - Ter Composer + PHP 7.* instalados na máquina.\",\r\n    \"preco\": 1452.33\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}cursos",
+							"host": [
+								"{{baseUrl}}cursos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update curso pelo id",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"connection": true,
+							"accept-encoding": true,
+							"accept": true,
+							"user-agent": true
+						}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Lumen Micro Framework - Guia (Incl. Eloquent, MySQL e JWT) alteradp ok\",\r\n    \"descricao\":\"Lumen é fantástico para fazer REST APIs. Aprenda neste curso os fundamentos e a Utilizá-lo com Eloquent, Mysql e JWT.\",\r\n    \"requisitos\": \" - Fundamentos de PHP são absolutamente necessários.<br> - Não precisa ser um especialista em PHP para fazer este curso.<br> - Ter Composer + PHP 7.* instalados na máquina.\",\r\n    \"preco\": 1452.33\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}cursos/31",
+							"host": [
+								"{{baseUrl}}cursos"
+							],
+							"path": [
+								"31"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar todos cursos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}cursos",
+							"host": [
+								"{{baseUrl}}cursos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar curso pelo id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}cursos/1",
+							"host": [
+								"{{baseUrl}}cursos"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remover curso pelo id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}cursos/1",
+							"host": [
+								"{{baseUrl}}cursos"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}logout",
+							"host": [
+								"{{baseUrl}}logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Novo Usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"Felipe Rodrigues Farias\",\r\n    \"email\":\"feliperfariasdev@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}novo_usuario",
+					"host": [
+						"{{baseUrl}}novo_usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"feliperfariasdev@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}login",
+					"host": [
+						"{{baseUrl}}login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://api-jwt.com/api/"
+		},
+		{
+			"key": "Token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGktand0LmNvbVwvYXBpXC9sb2dpbiIsImlhdCI6MTY3NTg4NzY5OSwiZXhwIjoxNjc1ODkxMjk5LCJuYmYiOjE2NzU4ODc2OTksImp0aSI6IllYSVNhYU1RT2JJV2tiWUMiLCJzdWIiOjMxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.V8Dnv1OX5SVl_955FEg0HTiTsZd_2LKO12qLYWBzW-s",
+			"type": "string"
+		}
+	]
+}
